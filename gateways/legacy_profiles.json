@@ -1,0 +1,886 @@
+{
+  "version": 1,
+  "profiles": [
+    {
+      "id": "ccn-3dali",
+      "source": "CCN/3dali.php",
+      "aliases": [
+        "3d"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Adyen"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": "3-D authentication flow is represented only as profile metadata."
+    },
+    {
+      "id": "ccn-holger",
+      "source": "CCN/Holger.php",
+      "aliases": [
+        "hg"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Stripe"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-inu",
+      "source": "CCN/Inu.php",
+      "aliases": [
+        "inu"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Braintree"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-kroon",
+      "source": "CCN/Kroon.php",
+      "aliases": [
+        "ko"
+      ],
+      "category": "CCN",
+      "labels": [
+        "PayPal"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-lytos",
+      "source": "CCN/Lytos.php",
+      "aliases": [
+        "ly"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Payeezy"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-reality-deshuso",
+      "source": "CCN/Reality deshuso.php",
+      "aliases": [
+        "rl"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Payflow"
+      ],
+      "operation": "authorize",
+      "legacy_state": "obsolete",
+      "notes": "Filename marks this handler as out of use."
+    },
+    {
+      "id": "ccn-rita-gate",
+      "source": "CCN/Rita Gate.php",
+      "aliases": [
+        "rt"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Payflow",
+        "PayPal"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": "The source explicitly names both labels; neither identifies a single provider protocol."
+    },
+    {
+      "id": "ccn-stranger",
+      "source": "CCN/Stranger.php",
+      "aliases": [
+        "st"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Adyen",
+        "Braintree"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": "The source explicitly names both labels; neither identifies a single provider protocol."
+    },
+    {
+      "id": "ccn-tang",
+      "source": "CCN/Tang.php",
+      "aliases": [
+        "tg"
+      ],
+      "category": "CCN",
+      "labels": [
+        "WooCommerce"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-yis",
+      "source": "CCN/Yis.php",
+      "aliases": [
+        "ys"
+      ],
+      "category": "CCN",
+      "labels": [],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-ali",
+      "source": "CCN/ali.php",
+      "aliases": [
+        "ali"
+      ],
+      "category": "CCN",
+      "labels": [],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-ax",
+      "source": "CCN/ax.php",
+      "aliases": [
+        "ax"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Moneris"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-br-1",
+      "source": "CCN/br (1).php",
+      "aliases": [
+        "br"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Braintree"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-ct",
+      "source": "CCN/ct.php",
+      "aliases": [
+        "ct"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Braintree",
+        "Shopify"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": "The source explicitly names both labels; neither identifies a single provider protocol."
+    },
+    {
+      "id": "ccn-dn-deshuso",
+      "source": "CCN/dn deshuso.php",
+      "aliases": [
+        "dm"
+      ],
+      "category": "CCN",
+      "labels": [],
+      "operation": "authorize",
+      "legacy_state": "obsolete",
+      "notes": "Filename marks this handler as out of use."
+    },
+    {
+      "id": "ccn-dr",
+      "source": "CCN/dr.php",
+      "aliases": [
+        "ll"
+      ],
+      "category": "CCN",
+      "labels": [
+        "PayPal"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-ewa-deshuso",
+      "source": "CCN/ewa deshuso.php",
+      "aliases": [
+        "dr"
+      ],
+      "category": "CCN",
+      "labels": [
+        "PayPal",
+        "Payflow"
+      ],
+      "operation": "authorize",
+      "legacy_state": "obsolete",
+      "notes": "Filename marks this handler as out of use."
+    },
+    {
+      "id": "ccn-gb",
+      "source": "CCN/gb.php",
+      "aliases": [
+        "gb"
+      ],
+      "category": "CCN",
+      "labels": [],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-iz",
+      "source": "CCN/iz.php",
+      "aliases": [
+        "iz"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Payflow"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-kd",
+      "source": "CCN/kd.php",
+      "aliases": [
+        "kd"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Braintree"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-lw-formato-update",
+      "source": "CCN/lw Formato Update.php",
+      "aliases": [
+        "lw"
+      ],
+      "category": "CCN",
+      "labels": [
+        "PayPal"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-michi",
+      "source": "CCN/michi.php",
+      "aliases": [
+        "mt"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Braintree"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-ms",
+      "source": "CCN/ms.php",
+      "aliases": [
+        "ms"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Adyen"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-never-deshuso",
+      "source": "CCN/never deshuso.php",
+      "aliases": [
+        "ne"
+      ],
+      "category": "CCN",
+      "labels": [
+        "PayPal",
+        "Payflow"
+      ],
+      "operation": "authorize",
+      "legacy_state": "obsolete",
+      "notes": "Filename marks this handler as out of use."
+    },
+    {
+      "id": "ccn-nl-deshuso",
+      "source": "CCN/nl deshuso.php",
+      "aliases": [
+        "nl"
+      ],
+      "category": "CCN",
+      "labels": [
+        "PayPal"
+      ],
+      "operation": "authorize",
+      "legacy_state": "obsolete",
+      "notes": "Filename marks this handler as out of use."
+    },
+    {
+      "id": "ccn-pp",
+      "source": "CCN/pp.php",
+      "aliases": [
+        "pp"
+      ],
+      "category": "CCN",
+      "labels": [
+        "PayPal",
+        "WooCommerce"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": "The source explicitly names both labels; neither identifies a single provider protocol."
+    },
+    {
+      "id": "ccn-ps",
+      "source": "CCN/ps.php",
+      "aliases": [
+        "ps"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Payflow"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-pwf-deshuso",
+      "source": "CCN/pwf deshuso.php",
+      "aliases": [
+        "pw"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Payflow",
+        "Shopify"
+      ],
+      "operation": "authorize",
+      "legacy_state": "obsolete",
+      "notes": "Filename marks this handler as out of use."
+    },
+    {
+      "id": "ccn-roxy-deshuso",
+      "source": "CCN/roxy deshuso.php",
+      "aliases": [
+        "rx"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Payflow"
+      ],
+      "operation": "authorize",
+      "legacy_state": "obsolete",
+      "notes": "Filename marks this handler as out of use."
+    },
+    {
+      "id": "ccn-sd",
+      "source": "CCN/sd.php",
+      "aliases": [
+        "sd"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Payflow"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-sf",
+      "source": "CCN/sf.php",
+      "aliases": [
+        "sf"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Payflow"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-sm",
+      "source": "CCN/sm.php",
+      "aliases": [
+        "sm"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Stripe",
+        "Shopify"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": "The source explicitly names both labels; neither identifies a single provider protocol."
+    },
+    {
+      "id": "ccn-tlv",
+      "source": "CCN/tlv.php",
+      "aliases": [
+        "tlv"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Stripe"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-vtc",
+      "source": "CCN/vtc.php",
+      "aliases": [
+        "vtc"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Payflow"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-wf",
+      "source": "CCN/wf.php",
+      "aliases": [
+        "wf"
+      ],
+      "category": "CCN",
+      "labels": [
+        "Payflow"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-amx-cookie",
+      "source": "CCN/Amx_Coookie.php",
+      "aliases": [
+        "mxc"
+      ],
+      "category": "CCN",
+      "labels": [],
+      "operation": "opaque",
+      "legacy_state": "fragment",
+      "notes": "The file is incomplete and exposes no reliable command alias or provider identity."
+    },
+    {
+      "id": "free-at",
+      "source": "Free/at.php",
+      "aliases": [
+        "at"
+      ],
+      "category": "Free",
+      "labels": [
+        "Stripe",
+        "PayPal"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": "The source explicitly names both labels; neither identifies a single provider protocol."
+    },
+    {
+      "id": "free-au",
+      "source": "Free/au.php",
+      "aliases": [
+        "au"
+      ],
+      "category": "Free",
+      "labels": [
+        "Stripe",
+        "WooCommerce"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": "The source explicitly names both labels; neither identifies a single provider protocol."
+    },
+    {
+      "id": "free-ay",
+      "source": "Free/ay.php",
+      "aliases": [
+        "an"
+      ],
+      "category": "Free",
+      "labels": [
+        "Stripe"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "free-chk",
+      "source": "Free/chk.php",
+      "aliases": [
+        "chk"
+      ],
+      "category": "Free",
+      "labels": [
+        "Stripe"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "free-kl-replace",
+      "source": "Free/kl replace.php",
+      "aliases": [
+        "kl"
+      ],
+      "category": "Free",
+      "labels": [
+        "Stripe",
+        "Adyen"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": "The source explicitly names both labels; neither identifies a single provider protocol."
+    },
+    {
+      "id": "free-lazuu",
+      "source": "Free/lazuu.php",
+      "aliases": [
+        "zs"
+      ],
+      "category": "Free",
+      "labels": [
+        "Stripe"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "free-mbt",
+      "source": "Free/mbt.php",
+      "aliases": [
+        "mbt"
+      ],
+      "category": "Free",
+      "labels": [
+        "Stripe"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "free-nks",
+      "source": "Free/nks.php",
+      "aliases": [
+        "nks"
+      ],
+      "category": "Free",
+      "labels": [
+        "Stripe"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "free-sfp",
+      "source": "Free/sfp.php",
+      "aliases": [
+        "shp"
+      ],
+      "category": "Free",
+      "labels": [
+        "Stripe",
+        "Shopify"
+      ],
+      "operation": "authorize",
+      "legacy_state": "handler",
+      "notes": "The source explicitly names both labels; neither identifies a single provider protocol."
+    },
+    {
+      "id": "ccn-charged-queen",
+      "source": "CCN CHARGED/Queen.php",
+      "aliases": [
+        "qn"
+      ],
+      "category": "CCN CHARGED",
+      "labels": [
+        "Braintree",
+        "Payeezy"
+      ],
+      "operation": "capture",
+      "legacy_state": "handler",
+      "notes": "The source explicitly names both labels; neither identifies a single provider protocol."
+    },
+    {
+      "id": "ccn-charged-adriana",
+      "source": "CCN CHARGED/adriana.php",
+      "aliases": [
+        "adr"
+      ],
+      "category": "CCN CHARGED",
+      "labels": [
+        "Payflow"
+      ],
+      "operation": "capture",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-charged-ar",
+      "source": "CCN CHARGED/ar.php",
+      "aliases": [
+        "00"
+      ],
+      "category": "CCN CHARGED",
+      "labels": [
+        "Shopify"
+      ],
+      "operation": "opaque",
+      "legacy_state": "fragment",
+      "notes": "No reliable command alias could be confirmed in the source."
+    },
+    {
+      "id": "ccn-charged-krispy",
+      "source": "CCN CHARGED/krispy.php",
+      "aliases": [
+        "kr"
+      ],
+      "category": "CCN CHARGED",
+      "labels": [
+        "Payeezy"
+      ],
+      "operation": "capture",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-charged-lucky",
+      "source": "CCN CHARGED/lucky.php",
+      "aliases": [
+        "lk"
+      ],
+      "category": "CCN CHARGED",
+      "labels": [
+        "Payeezy"
+      ],
+      "operation": "capture",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-charged-mx",
+      "source": "CCN CHARGED/mx.php",
+      "aliases": [
+        "mx"
+      ],
+      "category": "CCN CHARGED",
+      "labels": [
+        "Amazon MX"
+      ],
+      "operation": "capture",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "ccn-charged-sfpz",
+      "source": "CCN CHARGED/sfpz.php",
+      "aliases": [
+        "pz"
+      ],
+      "category": "CCN CHARGED",
+      "labels": [
+        "Payeezy"
+      ],
+      "operation": "capture",
+      "legacy_state": "handler",
+      "notes": ""
+    },
+    {
+      "id": "mass-mass1",
+      "source": "mass/mass1.php",
+      "aliases": [
+        "mass1"
+      ],
+      "category": "mass",
+      "labels": [
+        "PayPal",
+        "WooCommerce"
+      ],
+      "operation": "opaque",
+      "legacy_state": "handler",
+      "notes": "The source explicitly names both labels; execution is not implemented."
+    },
+    {
+      "id": "mass-mass2",
+      "source": "mass/mass2.php",
+      "aliases": [
+        "mass2"
+      ],
+      "category": "mass",
+      "labels": [
+        "Adyen"
+      ],
+      "operation": "opaque",
+      "legacy_state": "handler",
+      "notes": "Execution is not implemented."
+    },
+    {
+      "id": "mass-mass3",
+      "source": "mass/mass3.php",
+      "aliases": [
+        "mass3"
+      ],
+      "category": "mass",
+      "labels": [
+        "Braintree",
+        "PayPal",
+        "WooCommerce"
+      ],
+      "operation": "opaque",
+      "legacy_state": "handler",
+      "notes": "The source explicitly names multiple labels; execution is not implemented."
+    },
+    {
+      "id": "mass-mass4-replace",
+      "source": "mass/mass4 replace.php",
+      "aliases": [
+        "mass4"
+      ],
+      "category": "mass",
+      "labels": [
+        "BradesCard"
+      ],
+      "operation": "opaque",
+      "legacy_state": "fragment",
+      "notes": "The variant file is a replacement fragment without a confirmed command dispatch."
+    },
+    {
+      "id": "mass-mass5",
+      "source": "mass/mass5.php",
+      "aliases": [
+        "mass8"
+      ],
+      "category": "mass",
+      "labels": [],
+      "operation": "opaque",
+      "legacy_state": "handler",
+      "notes": "The PHP filename is mass5.php but its dispatch alias is mass8; execution is not implemented."
+    },
+    {
+      "id": "root-vbv",
+      "source": "vbv.php",
+      "aliases": [
+        "vbv"
+      ],
+      "category": "root",
+      "labels": [
+        "Braintree"
+      ],
+      "operation": "authenticate",
+      "legacy_state": "handler",
+      "notes": "3-D authentication flow represented only as metadata."
+    },
+    {
+      "id": "root-za",
+      "source": "za.php",
+      "aliases": [
+        "za"
+      ],
+      "category": "root",
+      "labels": [
+        "Adyen",
+        "Zara"
+      ],
+      "operation": "opaque",
+      "legacy_state": "handler",
+      "notes": "The source explicitly names both labels; neither identifies a single provider protocol."
+    }
+  ],
+  "excluded": [
+    {
+      "source": "_base.php",
+      "reason": "Shared helper/configuration file, not an individual payment gateway handler."
+    },
+    {
+      "source": "Funtcion/Key.php",
+      "reason": "Bot key and access helper, not a payment gateway handler."
+    },
+    {
+      "source": "Funtcion/Premium.php",
+      "reason": "Membership helper, not a payment gateway handler."
+    },
+    {
+      "source": "Funtcion/extra.php",
+      "reason": "Bot utility helper, not a payment gateway handler."
+    },
+    {
+      "source": "Funtcion/grouptime.php",
+      "reason": "Group membership timing helper, not a payment gateway handler."
+    },
+    {
+      "source": "Funtcion/premiuntime.php",
+      "reason": "Membership timing helper, not a payment gateway handler."
+    },
+    {
+      "source": "Funtcion/price.php",
+      "reason": "Pricing helper, not a payment gateway handler."
+    },
+    {
+      "source": "Funtcion/rand.php",
+      "reason": "Random-data helper, not a payment gateway handler."
+    },
+    {
+      "source": "Funtcion/sdd.php",
+      "reason": "Bot utility helper, not a payment gateway handler."
+    },
+    {
+      "source": "Funtcion/start.php",
+      "reason": "Bot startup helper, not a payment gateway handler."
+    },
+    {
+      "source": "mass/bin.php",
+      "reason": "BIN-information helper, not a mass payment handler."
+    },
+    {
+      "source": "mass/mass1.php.bk",
+      "reason": "Backup copy of mass1.php, excluded to avoid counting duplicate handler code."
+    }
+  ]
+}

@@ -103,7 +103,9 @@ su contrato real requiere un adaptador específico:
 [ambientes Colombia](https://docs.wompi.co/docs/colombia/ambientes-y-llaves/),
 [eventos Colombia](https://docs.wompi.co/docs/colombia/eventos/),
 [ambientes Panamá](https://docs.wompi.co/en/docs/panama/ambientes-y-llaves/).
-Esta versión no realiza llamadas a Wompi, ni siquiera a su sandbox.
+`lab/` conserva su contrato local. El nuevo [gateway Wompi Panamá](../gateways/README.md)
+implementa las firmas del proveedor, un mock HTTP y un cliente explícito para su
+sandbox. Ejecuta `python3 -m gateways demo` para usarlo sin credenciales.
 
 | Función anterior | Sustitución en el laboratorio |
 | --- | --- |
