@@ -1,0 +1,387 @@
+{
+  "name": "Controles locales de pagos y CAPTCHA",
+  "cases": [
+    {
+      "name": "Servicio disponible",
+      "path": "/health",
+      "expected_status": 200,
+      "expected_json": {
+        "mode": "simulation"
+      },
+      "method": "GET"
+    },
+    {
+      "name": "Pago sin autenticación",
+      "path": "/payments",
+      "expected_status": 401,
+      "body": {
+        "order_id": "order-demo-001",
+        "reference": "ref-demo-001",
+        "amount_in_cents": 150000,
+        "currency": "COP",
+        "payment_token": "fixture-approved",
+        "captcha_token": "fixture-captcha-valid"
+      }
+    },
+    {
+      "name": "Clave inválida",
+      "path": "/payments",
+      "expected_status": 401,
+      "body": {
+        "order_id": "order-demo-001",
+        "reference": "ref-demo-001",
+        "amount_in_cents": 150000,
+        "currency": "COP",
+        "payment_token": "fixture-approved",
+        "captcha_token": "fixture-captcha-valid"
+      },
+      "headers": {
+        "Authorization": "Bearer lab-invalid-key"
+      }
+    },
+    {
+      "name": "Importe manipulado",
+      "path": "/payments",
+      "expected_status": 422,
+      "body": {
+        "order_id": "order-demo-001",
+        "reference": "ref-demo-001",
+        "amount_in_cents": 1,
+        "currency": "COP",
+        "payment_token": "fixture-approved",
+        "captcha_token": "fixture-captcha-valid"
+      },
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      }
+    },
+    {
+      "name": "Moneda manipulada",
+      "path": "/payments",
+      "expected_status": 422,
+      "body": {
+        "order_id": "order-demo-001",
+        "reference": "ref-demo-001",
+        "amount_in_cents": 150000,
+        "currency": "USD",
+        "payment_token": "fixture-approved",
+        "captcha_token": "fixture-captcha-valid"
+      },
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      }
+    },
+    {
+      "name": "Importe de tipo incorrecto",
+      "path": "/payments",
+      "expected_status": 400,
+      "body": {
+        "order_id": "order-demo-001",
+        "reference": "ref-demo-001",
+        "amount_in_cents": true,
+        "currency": "COP",
+        "payment_token": "fixture-approved",
+        "captcha_token": "fixture-captcha-valid"
+      },
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      }
+    },
+    {
+      "name": "Orden desconocida",
+      "path": "/payments",
+      "expected_status": 422,
+      "body": {
+        "order_id": "order-unknown",
+        "reference": "ref-demo-001",
+        "amount_in_cents": 150000,
+        "currency": "COP",
+        "payment_token": "fixture-approved",
+        "captcha_token": "fixture-captcha-valid"
+      },
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      }
+    },
+    {
+      "name": "CAPTCHA ausente en pago",
+      "path": "/payments",
+      "expected_status": 403,
+      "body": {
+        "order_id": "order-demo-001",
+        "reference": "ref-demo-001",
+        "amount_in_cents": 150000,
+        "currency": "COP",
+        "payment_token": "fixture-approved"
+      },
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      }
+    },
+    {
+      "name": "CAPTCHA inválido en pago",
+      "path": "/payments",
+      "expected_status": 403,
+      "body": {
+        "order_id": "order-demo-001",
+        "reference": "ref-demo-001",
+        "amount_in_cents": 150000,
+        "currency": "COP",
+        "payment_token": "fixture-approved",
+        "captcha_token": "fixture-captcha-invalid"
+      },
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      }
+    },
+    {
+      "name": "Token de pago desconocido",
+      "path": "/payments",
+      "expected_status": 422,
+      "body": {
+        "order_id": "order-demo-001",
+        "reference": "ref-demo-001",
+        "amount_in_cents": 150000,
+        "currency": "COP",
+        "payment_token": "fixture-unknown",
+        "captcha_token": "fixture-captcha-valid"
+      },
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      }
+    },
+    {
+      "name": "Pago simulado aprobado",
+      "path": "/payments",
+      "expected_status": 201,
+      "body": {
+        "order_id": "order-demo-001",
+        "reference": "ref-demo-001",
+        "amount_in_cents": 150000,
+        "currency": "COP",
+        "payment_token": "fixture-approved",
+        "captcha_token": "fixture-captcha-valid"
+      },
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      },
+      "expected_json": {
+        "status": "APPROVED",
+        "id": "lab-1"
+      }
+    },
+    {
+      "name": "Pago repetido conserva transacción",
+      "path": "/payments",
+      "expected_status": 200,
+      "body": {
+        "order_id": "order-demo-001",
+        "reference": "ref-demo-001",
+        "amount_in_cents": 150000,
+        "currency": "COP",
+        "payment_token": "fixture-approved",
+        "captcha_token": "fixture-captcha-valid"
+      },
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      },
+      "expected_json": {
+        "status": "APPROVED",
+        "id": "lab-1"
+      }
+    },
+    {
+      "name": "Referencia reutilizada con datos diferentes",
+      "path": "/payments",
+      "expected_status": 409,
+      "body": {
+        "order_id": "order-demo-001",
+        "reference": "ref-demo-001",
+        "amount_in_cents": 150000,
+        "currency": "COP",
+        "payment_token": "fixture-declined",
+        "captcha_token": "fixture-captcha-valid"
+      },
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      }
+    },
+    {
+      "name": "Pago simulado rechazado",
+      "path": "/payments",
+      "expected_status": 402,
+      "body": {
+        "order_id": "order-demo-001",
+        "reference": "ref-declined",
+        "amount_in_cents": 150000,
+        "currency": "COP",
+        "payment_token": "fixture-declined",
+        "captcha_token": "fixture-captcha-valid"
+      },
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      },
+      "expected_json": {
+        "status": "DECLINED"
+      }
+    },
+    {
+      "name": "CAPTCHA válido",
+      "path": "/captcha/verify",
+      "expected_status": 200,
+      "body": {
+        "token": "fixture-captcha-valid"
+      },
+      "expected_json": {
+        "success": true
+      }
+    },
+    {
+      "name": "CAPTCHA inválido",
+      "path": "/captcha/verify",
+      "expected_status": 400,
+      "body": {
+        "token": "fixture-captcha-invalid"
+      },
+      "expected_json": {
+        "success": false
+      }
+    },
+    {
+      "name": "CAPTCHA ausente",
+      "path": "/captcha/verify",
+      "expected_status": 400,
+      "body": {},
+      "expected_json": {
+        "success": false
+      }
+    },
+    {
+      "name": "Webhook sin firma",
+      "path": "/webhooks/payments",
+      "expected_status": 401,
+      "body": {
+        "event_id": "evt-demo-001",
+        "reference": "ref-demo-001",
+        "status": "APPROVED",
+        "amount_in_cents": 150000,
+        "currency": "COP"
+      }
+    },
+    {
+      "name": "Webhook con firma inválida",
+      "path": "/webhooks/payments",
+      "expected_status": 401,
+      "body": {
+        "event_id": "evt-demo-001",
+        "reference": "ref-demo-001",
+        "status": "APPROVED",
+        "amount_in_cents": 150000,
+        "currency": "COP"
+      },
+      "headers": {
+        "X-Lab-Signature": "invalid"
+      }
+    },
+    {
+      "name": "Webhook firmado pero importe incorrecto",
+      "path": "/webhooks/payments",
+      "expected_status": 422,
+      "body": {
+        "event_id": "evt-demo-001",
+        "reference": "ref-demo-001",
+        "status": "APPROVED",
+        "amount_in_cents": 1,
+        "currency": "COP"
+      },
+      "sign_lab_event": true
+    },
+    {
+      "name": "Webhook válido",
+      "path": "/webhooks/payments",
+      "expected_status": 200,
+      "body": {
+        "event_id": "evt-demo-001",
+        "reference": "ref-demo-001",
+        "status": "APPROVED",
+        "amount_in_cents": 150000,
+        "currency": "COP"
+      },
+      "expected_json": {
+        "duplicate": false
+      },
+      "sign_lab_event": true
+    },
+    {
+      "name": "Webhook repetido idempotente",
+      "path": "/webhooks/payments",
+      "expected_status": 200,
+      "body": {
+        "event_id": "evt-demo-001",
+        "reference": "ref-demo-001",
+        "status": "APPROVED",
+        "amount_in_cents": 150000,
+        "currency": "COP"
+      },
+      "expected_json": {
+        "duplicate": true
+      },
+      "sign_lab_event": true
+    },
+    {
+      "name": "Evento reutilizado con contenido diferente",
+      "path": "/webhooks/payments",
+      "expected_status": 409,
+      "body": {
+        "event_id": "evt-demo-001",
+        "reference": "ref-demo-001",
+        "status": "DECLINED",
+        "amount_in_cents": 150000,
+        "currency": "COP"
+      },
+      "sign_lab_event": true
+    },
+    {
+      "name": "Límite de frecuencia: solicitud 1",
+      "path": "/limited",
+      "expected_status": 200,
+      "body": {},
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      }
+    },
+    {
+      "name": "Límite de frecuencia: solicitud 2",
+      "path": "/limited",
+      "expected_status": 200,
+      "body": {},
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      }
+    },
+    {
+      "name": "Límite de frecuencia: solicitud 3",
+      "path": "/limited",
+      "expected_status": 200,
+      "body": {},
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      }
+    },
+    {
+      "name": "Límite de frecuencia: solicitud 4",
+      "path": "/limited",
+      "expected_status": 429,
+      "body": {},
+      "headers": {
+        "Authorization": "Bearer lab-valid-key"
+      }
+    },
+    {
+      "name": "Ruta inexistente",
+      "path": "/unknown",
+      "expected_status": 404,
+      "body": {}
+    }
+  ]
+}

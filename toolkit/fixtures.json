@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "description": "Synthetic laboratory examples only; not complete postal, identity, search or translation catalogs.",
+  "postal_codes": {
+    "00001": {
+      "country": "us",
+      "synthetic": true,
+      "county": "Laboratory County",
+      "postal_code": "00001",
+      "city": "Laboratory District US",
+      "state": "Laboratory State",
+      "state_short": "LAB"
+    },
+    "00002": {
+      "country": "mx",
+      "synthetic": true,
+      "county": "Laboratory County",
+      "postal_code": "00002",
+      "city": "Laboratory District MX",
+      "state": "Laboratory State",
+      "state_short": "LAB"
+    },
+    "00003": {
+      "country": "es",
+      "synthetic": true,
+      "county": "Laboratory County",
+      "postal_code": "00003",
+      "city": "Laboratory District ES",
+      "state": "Laboratory State",
+      "state_short": "LAB"
+    }
+  },
+  "btc": {
+    "price": 10000,
+    "currency": "USD",
+    "simulated": true,
+    "as_of": "simulation"
+  },
+  "translations": {
+    "es": {
+      "hello world": "hola mundo",
+      "hello  world": "hola  mundo"
+    },
+    "en": {
+      "hola mundo": "hello world"
+    },
+    "fr": {
+      "hola mundo": "bonjour le monde"
+    }
+  },
+  "identities": [
+    {
+      "id": "ID-LAB-001",
+      "country": "us",
+      "name": "Laboratory Persona US",
+      "email": "lab-us@example.invalid",
+      "synthetic": true,
+      "first_name": "Laboratory",
+      "paternal_surname": "Persona",
+      "maternal_surname": "US",
+      "sex": "unspecified",
+      "birth_date": "2000-01-01",
+      "age": 26,
+      "municipality": "Laboratory Municipality",
+      "street": "Laboratory Street",
+      "exterior_number": "LAB-1",
+      "interior_number": "LAB-A",
+      "neighborhood": "Laboratory Neighborhood",
+      "postal_code": "00001",
+      "origin_state": "Laboratory State"
+    },
+    {
+      "id": "ID-LAB-002",
+      "country": "mx",
+      "name": "Laboratory Persona MX",
+      "email": "lab-mx@example.invalid",
+      "synthetic": true,
+      "first_name": "Laboratory",
+      "paternal_surname": "Persona",
+      "maternal_surname": "MX",
+      "sex": "unspecified",
+      "birth_date": "2000-01-01",
+      "age": 26,
+      "municipality": "Laboratory Municipality",
+      "street": "Laboratory Street",
+      "exterior_number": "LAB-1",
+      "interior_number": "LAB-A",
+      "neighborhood": "Laboratory Neighborhood",
+      "postal_code": "00002",
+      "origin_state": "Laboratory State"
+    },
+    {
+      "id": "ID-LAB-003",
+      "country": "es",
+      "name": "Laboratory Persona ES",
+      "email": "lab-es@example.invalid",
+      "synthetic": true,
+      "first_name": "Laboratory",
+      "paternal_surname": "Persona",
+      "maternal_surname": "ES",
+      "sex": "unspecified",
+      "birth_date": "2000-01-01",
+      "age": 26,
+      "municipality": "Laboratory Municipality",
+      "street": "Laboratory Street",
+      "exterior_number": "LAB-1",
+      "interior_number": "LAB-A",
+      "neighborhood": "Laboratory Neighborhood",
+      "postal_code": "00003",
+      "origin_state": "Laboratory State"
+    }
+  ],
+  "search": {
+    "laboratorio": [
+      {
+        "title": "Local laboratory guide",
+        "url": "docs/laboratory.html"
+      },
+      {
+        "title": "Loopback laboratory example",
+        "url": "http://127.0.0.1:8000/laboratory"
+      },
+      {
+        "title": "Localhost laboratory example",
+        "url": "http://localhost:8000/laboratory"
+      }
+    ]
+  }
+}
